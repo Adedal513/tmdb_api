@@ -13,11 +13,13 @@
 
 ## search_in_db.py
 
-Ищет информацию о фильме из JSON-файла, заранее выгруженного на ПК.
+Ищет информацию о фильме по ключевому слову из файла, заранее выгруженного на ПК. Возвращает все фильмы, в названиях которых встречается слово.
 
 ### Использование
-```bash
-
+```console
+user@user:/mnt/tmdb_api$ python3 search_ond_db.py
+Enter path to DataBase: ./MyFilmDB.json
+Enter film to search for: Fight Club
 ```
 
 ## make_own_db.py
@@ -26,7 +28,12 @@
 
 ### Использование
 
-```bash
+```console
+user@user:/mnt/tmdb_api$ python3 make_own_db.py
+Enter your api key v3: 
+0.0 percent complete
+...
+100.0 percent complete
 ```
 
 ## own_db_helpers.py
@@ -42,10 +49,17 @@
 
 ## find_similar.py
 
-Ищет информацию о фильме по названию. Информация ищется по заранее выгруженному файлу. Если фильм найден, выдает основную информацию о фильме:
-- Язык оригинала
-- Бюджет
-- Жанры
-- Коллекция, в которую входит фильм.
+Ищет фильмы, похожие на запрошенный. Отбор происходит по схожести:
+- Бюджета
+- Жанра
+- Языка оригинала
+- Коллекции
+
+Выводит лучшие 8 совпадений.
 
 ### Использование
+```console
+user@user:/mnt/tmdb_api$ python3 find_similar.py
+Enter path to DataBase: ./MyFilmDB.json
+Enter film to search for: Fight Club
+```
